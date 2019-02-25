@@ -1,0 +1,14 @@
+{
+  "name": "touche",
+  "version": "1.0.0",
+  "description": "touche foundation charity website ",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css/ --recursive"
+  },
+  "author": "Salaam Williams",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

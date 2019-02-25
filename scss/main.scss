@@ -1,0 +1,273 @@
+$primary: #9fc295;
+$secondary: #009e60;
+$font-color: #fcfcfc;
+$color1: #f77f00;
+
+@import "gallery";
+@import url("https://fonts.googleapis.com/css?family=Lato|Playball");
+
+// ** mixins **
+
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+
+//  global
+body {
+  background-color: $font-color;
+  padding: 0;
+  margin: 0;
+  font-weight: 15px;
+  font-family: "Lato", "Open Sans", sans-serif;
+  line-height: 1.5;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.btn_1 {
+  height: 38px;
+  background: $color1;
+  border: 0;
+  border-radius: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: $font-color;
+}
+
+// ** aside background **
+.dark {
+  padding: 15px;
+  background: $primary;
+  color: $font-color;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+// header
+
+header {
+  background: $primary;
+  color: $font-color;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: $color1 3px solid;
+}
+
+header a {
+  color: $font-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 15px 0 15px;
+}
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+header .highlight {
+  font-size: 3rem;
+  font-family: "Playball", sans-serif;
+  padding-right: 5px;
+}
+header .highlight {
+  color: $secondary;
+  font-weight: bold;
+}
+header .current a {
+  color: $color1;
+}
+
+header a:hover {
+  color: $color1;
+  @include easeOut;
+}
+
+// showcase
+
+#showcase {
+  //  **parallax scrolling**
+  min-height: 500px;
+  background: url("../img/playing.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: $color1;
+}
+
+#showcase h1 {
+  margin-top: 100px;
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+#showcase p {
+  font-size: 20px;
+}
+
+// ** donate **
+
+#donate {
+  padding: 15px;
+  color: $font-color;
+  background: $primary;
+}
+
+#donate h1 {
+  float: left;
+}
+
+#donate form {
+  float: right;
+  margin-top: 20px;
+}
+// #donate a:hover {
+//   cursor: pointer;
+//   background: #08e408;
+// }
+#donate input[type="email"] {
+  padding: 4px;
+  height: 25px;
+  width: 250px;
+  border-radius: 3px;
+  display: inline;
+}
+
+#donate div {
+  width: 60%;
+}
+
+input,
+button.btn_1 {
+  display: inline;
+}
+
+// **boxes**
+#boxes {
+  margin-top: 20px;
+}
+
+#boxes .box {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+}
+#boxes .box img {
+  width: 90px;
+}
+
+// ** sidebar **
+aside#sidebar {
+  float: right;
+  width: 30%;
+  margin-top: 10px;
+}
+
+aside#sidebar .contact input,
+aside#sidebar .contact textarea {
+  width: 90%;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+// ** main-col **
+article#main-col {
+  float: left;
+  width: 65%;
+}
+
+// ** how to help **
+ul#help li {
+  list-style: none;
+  padding: 20px;
+  margin-bottom: 5px;
+  background: #e6e6e6;
+  border-radius: 3px;
+  box-shadow: 6px 10px 30px -9px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  padding: 20px;
+  margin-top: 20px;
+  color: $font-color;
+  text-align: center;
+  background: $primary;
+}
+
+footer span {
+  color: $color1;
+}
+
+//  ** media queries **
+
+@media (max-width: 768px) {
+  header #branding,
+  header nav,
+  header nav li,
+  #donate h1,
+  #donate form,
+  #boxes .box,
+  article#main-col,
+  aside#sidebar {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  #donate {
+    text-align: center;
+    float: none;
+    width: 100%;
+  }
+
+  header {
+    padding-bottom: 20px;
+  }
+
+  #showcase h1 {
+    margin-top: 40px;
+  }
+
+  #donate button,
+  .contact button {
+    display: block;
+    width: 100%;
+  }
+
+  #donate form input[type="email"],
+  .contact input,
+  .contact textarea {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
